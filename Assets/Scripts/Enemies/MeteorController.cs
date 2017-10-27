@@ -2,25 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MeteorController : MonoBehaviour 
+public class MeteorController : MonoBehaviour
 {
-    GameObject player;
+	GameObject player;
 
-    private void Start()
-    {
-        player = GameObject.Find("Player");
-    }
+	private void Start ()
+	{
+		player = GameObject.Find ("Player");
+	}
 
-    private void Update()
-    {
-        if (gameObject)
-        {
-            Vector3 diff = player.transform.position - transform.position;
+	private void Update ()
+	{
+		if (gameObject)
+		{
+			Vector3 diff = player.transform.position - transform.position;
 
-            float distance = diff.magnitude;
+			float distance = diff.magnitude;
 
-            if (distance > 15)
-                Destroy(gameObject);
-        }
-    }
+			if (distance > 15)
+				Destroy (gameObject);
+		}
+	}
 }

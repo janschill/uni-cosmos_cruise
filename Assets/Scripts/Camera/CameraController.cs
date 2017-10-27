@@ -18,39 +18,39 @@ using UnityEngine;
  */
 public class CameraController : MonoBehaviour
 {
-    public GameObject cameraMain;
-    public GameObject cameraFirstPerson;
+	public GameObject cameraMain;
+	public GameObject cameraFirstPerson;
 
-    public void GetReferences()
-    {
-        cameraMain = GameObject.Find("CameraMain");
-        cameraFirstPerson = GameObject.Find("CameraFirstPerson");
-        cameraFirstPerson.SetActive(false);
-    }
+	public void GetReferences ()
+	{
+		cameraMain = GameObject.Find ("CameraMain");
+		cameraFirstPerson = GameObject.Find ("CameraFirstPerson");
+		cameraFirstPerson.SetActive (false);
+	}
 
-    public void SetCameraPosition()
-    {
-        /* main camera orthographic hanging statically above the level */
-        Camera.main.transform.position = new Vector3(GameManager.instance.gridcontroller.gridsize / 2f, 5, -6 + GameManager.difficulty);
-        Camera.main.transform.rotation = Quaternion.Euler(30f, 0, 0);
-        Camera.main.orthographic = true;
-        Camera.main.orthographicSize = 7 + GameManager.difficulty;
-    }
+	public void SetCameraPosition ()
+	{
+		/* main camera orthographic hanging statically above the level */
+		Camera.main.transform.position = new Vector3 (GameManager.instance.gridcontroller.gridsize / 2f, 5, -6 + GameManager.difficulty);
+		Camera.main.transform.rotation = Quaternion.Euler (30f, 0, 0);
+		Camera.main.orthographic = true;
+		Camera.main.orthographicSize = 7 + GameManager.difficulty;
+	}
 
-    public void SetCamera(int i)
-    {
-        if (i == 1)
-        {
-            cameraFirstPerson.SetActive(false);
-            cameraMain.SetActive(true);
-            Debug.Log("Cam-1");
-        }
+	public void SetCamera (int i)
+	{
+		if (i == 1)
+		{
+			cameraFirstPerson.SetActive (false);
+			cameraMain.SetActive (true);
+			Debug.Log ("Cam-1");
+		}
 
-        if(i == 2)
-        {
-            cameraFirstPerson.SetActive(true);
-            cameraMain.SetActive(false);
-            Debug.Log("Cam-2");
-        }
-    }
+		if (i == 2)
+		{
+			cameraFirstPerson.SetActive (true);
+			cameraMain.SetActive (false);
+			Debug.Log ("Cam-2");
+		}
+	}
 }

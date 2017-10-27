@@ -11,44 +11,44 @@ using UnityEngine;
  */
 public class PlayerMenuColorController : MonoBehaviour
 {
-    private bool mouseover;
-    private bool clicked;
-    public float speed;
+	private bool mouseover;
+	private bool clicked;
+	public float speed;
 
-    private void Update()
-    {
-        /* scaling the sphere on hovering */
-        if (mouseover)
-            transform.localScale = new Vector3(200, 200, 200);
-        else
-            transform.localScale = new Vector3(100, 100, 100);
+	private void Update ()
+	{
+		/* scaling the sphere on hovering */
+		if (mouseover)
+			transform.localScale = new Vector3 (200, 200, 200);
+		else
+			transform.localScale = new Vector3 (100, 100, 100);
 
-        /* rotating the sphere on clicked */
-        if (clicked)
-            transform.RotateAround(transform.position, Vector3.up, Time.deltaTime * speed);
-    }
+		/* rotating the sphere on clicked */
+		if (clicked)
+			transform.RotateAround (transform.position, Vector3.up, Time.deltaTime * speed);
+	}
 
-    /* set the bools for Update() */
-    private void OnMouseDown()
-    {
-        if (clicked)
-            clicked = false;
-        else if (!clicked)
-            clicked = true;
+	/* set the bools for Update() */
+	private void OnMouseDown ()
+	{
+		if (clicked)
+			clicked = false;
+		else if (!clicked)
+			clicked = true;
 
 
-        /* call the method in PlayerMenuSpawnerController to save the last clicked element*/
-        PlayerMenuSpawnerController.SetPlayerPref(System.Int32.Parse(transform.gameObject.name));
-        Debug.Log(System.Int32.Parse(transform.gameObject.name));
-    }
+		/* call the method in PlayerMenuSpawnerController to save the last clicked element*/
+		PlayerMenuSpawnerController.SetPlayerPref (System.Int32.Parse (transform.gameObject.name));
+		Debug.Log (System.Int32.Parse (transform.gameObject.name));
+	}
 
-    private void OnMouseOver()
-    {
-        mouseover = true;
-    }
+	private void OnMouseOver ()
+	{
+		mouseover = true;
+	}
 
-    private void OnMouseExit()
-    {
-        mouseover = false;
-    }
+	private void OnMouseExit ()
+	{
+		mouseover = false;
+	}
 }

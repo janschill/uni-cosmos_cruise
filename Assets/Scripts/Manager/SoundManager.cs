@@ -6,52 +6,52 @@ public class SoundManager : MonoBehaviour
 {
 	public static SoundManager instance = null;
 
-    public AudioSource backgroundmusic;
-    public AudioSource soundeffects;
+	public AudioSource backgroundmusic;
+	public AudioSource soundeffects;
 
-    public AudioClip[] clips;
+	public AudioClip[] clips;
 
-    private void Awake()
-    {
-        if (instance == null)
-            instance = this;
-        else if (instance != this)
-            Destroy(gameObject);
+	private void Awake ()
+	{
+		if (instance == null)
+			instance = this;
+		else if (instance != this)
+			Destroy (gameObject);
 
-        DontDestroyOnLoad(gameObject);
+		DontDestroyOnLoad (gameObject);
 
-        RandomBackgroundMusic();
-    }
+		RandomBackgroundMusic ();
+	}
 
-    public void PlaySoundEffect(AudioClip clip)
-    {
-        soundeffects.clip = clip;
+	public void PlaySoundEffect (AudioClip clip)
+	{
+		soundeffects.clip = clip;
 
-        soundeffects.Play();
-    }
+		soundeffects.Play ();
+	}
 
-    public void ToggleMute()
-    {
-        Debug.Log("ToggleMute");
+	public void ToggleMute ()
+	{
+		Debug.Log ("ToggleMute");
 
-        if (backgroundmusic.mute == false)
-            backgroundmusic.mute = true;
+		if (backgroundmusic.mute == false)
+			backgroundmusic.mute = true;
         
-        if (backgroundmusic.mute == true)
-            backgroundmusic.mute = false;
-    }
+		if (backgroundmusic.mute == true)
+			backgroundmusic.mute = false;
+	}
 
-    private void RandomBackgroundMusic()
-    {
-        //AudioClip clip = backgroundmusic.GetComponent<AudioClip>();
-        backgroundmusic = GetComponent<AudioSource>();
+	private void RandomBackgroundMusic ()
+	{
+		//AudioClip clip = backgroundmusic.GetComponent<AudioClip>();
+		backgroundmusic = GetComponent<AudioSource> ();
 
-        int random = Random.Range(0, clips.Length);
+		int random = Random.Range (0, clips.Length);
 
-		backgroundmusic.clip = clips[random];
+		backgroundmusic.clip = clips [random];
 
-        backgroundmusic.Play();
+		backgroundmusic.Play ();
 		
-        //clip = clips[random];
-    }
+		//clip = clips[random];
+	}
 }

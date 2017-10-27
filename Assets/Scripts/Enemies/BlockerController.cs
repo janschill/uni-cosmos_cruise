@@ -13,13 +13,13 @@ using UnityEngine;
  */
 public class BlockerController : MonoBehaviour
 {
-    //private void OnTriggerEnter(Collider collider)
-    //{
-    //    if(collider.gameObject.tag.Contains("Player"))
-    //    {
-    //        Rigidbody rb = collider.gameObject.GetComponent<Rigidbody>();
-    //        Vector3 pos = transform.position - collider.gameObject.transform.position;
-    //        rb.AddForce((-pos) * 1000);
-    //    }
-    //}
+	//private void OnTriggerEnter(Collider collider)
+	//{
+	//    if(collider.gameObject.tag.Contains("Player"))
+	//    {
+	//        Rigidbody rb = collider.gameObject.GetComponent<Rigidbody>();
+	//        Vector3 pos = transform.position - collider.gameObject.transform.position;
+	//        rb.AddForce((-pos) * 1000);
+	//    }
+	//}
 }

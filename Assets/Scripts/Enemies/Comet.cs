@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Comet : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision collider)
-    {
-        if (collider.gameObject.tag == "Gr")
-        {
-            collider.gameObject.SetActive(false);
-            Debug.Log("cometcollsion");
-        }
-    }
+	private void OnCollisionEnter (Collision collider)
+	{
+		if (collider.gameObject.tag == "Gr")
+		{
+			collider.gameObject.SetActive (false);
+			Debug.Log ("cometcollsion");
+		}
+	}
 }

@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,19 +8,19 @@ using UnityEngine.SceneManagement;
  */
 public class LoadSceneOnClick : MonoBehaviour
 {
-    public void LoadByIndex(int index)
-    {
-        SceneManager.LoadScene(index);
-    }
+	public void LoadByIndex (int index)
+	{
+		SceneManager.LoadScene (index);
+	}
 
-    public void DestroyGMInstance()
-    {
-        Destroy(GameManager.instance.gameObject);
-        Destroy(SoundManager.instance.gameObject);
-    }
+	public void DestroyGMInstance ()
+	{
+		Destroy (GameManager.instance.gameObject);
+		Destroy (SoundManager.instance.gameObject);
+	}
 
-    public void ApplicationQuit()
-    {
-        Application.Quit();
-    }
+	public void ApplicationQuit ()
+	{
+		Application.Quit ();
+	}
 }
