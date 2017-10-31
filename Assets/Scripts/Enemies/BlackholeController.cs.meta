@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 0311c0392c6365d488e079cc60343046
+timeCreated: 1497818363
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - blackholesound: {fileID: 8300000, guid: b8c4c635fb324438498f4950af53417c, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
